@@ -17,3 +17,5 @@
 
 Evs:["Fingerprints", "GhostWriting", "SpiritBox",
 "FreezingTemps", "GhostOrbs", "EMF5", "Projector"]
+
+-|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS

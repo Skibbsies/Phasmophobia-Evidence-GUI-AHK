@@ -18,14 +18,15 @@ global AllElements
 global NumElements
 
 global GhostList
+global EvidenceList
 
 global GuiActive := true
 
 
 ; Global arrays, containing evidence for each ghost and a list of ghosts.
 
-global GhostProperties := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
-global GhostPropertiesOriginal := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
+global GhostProperties := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], Ev:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
+global GhostPropertiesOriginal := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], Ev:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
 
 newGhostList := []
 newGhostList.SetCapacity(GhostProperties.GL.GetCapacity())
@@ -72,9 +73,11 @@ Gui, Add, DropDownList, vExcludedThree gReturnGhost Choose1 cRed Sort, -|Prints|
 
 
 Gui, Font, s10
-Gui, Add, Text, x200 y100 w500 h50 cWhite, Potential Ghost Types:
+Gui, Add, Text, x200 y100 w500 h50 cWhite, Types:
+Gui, Add, Text, x275 y100 w500 h50 cWhite, Evidence:
 Gui, Font, s9
-Gui, Add, Text, x200 y120 w500 h500 vGhostList cAqua,
+Gui, Add, Text, x200 y120 w70 h500 vGhostList cAqua,
+Gui, Add, Text, x275 y120 w100 h500 vEvidenceList cRed,
 
 ReturnGhost()
 
@@ -120,11 +123,17 @@ GhostProperties.GL.13 := GhostPropertiesOriginal.GL.13
 GhostProperties.GL.14 := GhostPropertiesOriginal.GL.14
 GhostProperties.GL.15 := GhostPropertiesOriginal.GL.15
 GhostProperties.GL.16 := GhostPropertiesOriginal.GL.16
+
+GhostProperties.Ev.1 := GhostPropertiesOriginal.Ev.1
+GhostProperties.Ev.2 := GhostPropertiesOriginal.Ev.2
+GhostProperties.Ev.3 := GhostPropertiesOriginal.Ev.3
+GhostProperties.Ev.4 := GhostPropertiesOriginal.Ev.4
+GhostProperties.Ev.5 := GhostPropertiesOriginal.Ev.5
+GhostProperties.Ev.6 := GhostPropertiesOriginal.Ev.6
+GhostProperties.Ev.7 := GhostPropertiesOriginal.Ev.7
 return
 
-ButtonGhostsList: ; Prints a list of potential ghost types that the user is dealing with.
-MsgBox, 4096, Ghost Type List, Potential Ghost Types: `n `n%GhostElements%
-return
+
 
 ReturnGhost() { ; The main function that decides which ghost is present. Ghosts that have been excluded will return as "Disproved".
 	Gui, Submit, NoHide
@@ -232,6 +241,9 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.14 := ""
 		GhostProperties.GL.15 := ""
+		
+		GhostProperties.Ev.2 := ""
+		GhostProperties.Ev.7 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.3 || EvidenceTwo = GhostProperties.Evs.3 || EvidenceThree = GhostProperties.Evs.3)
@@ -246,6 +258,9 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.15 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.3 := ""
+		GhostProperties.Ev.4 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.4 || EvidenceTwo = GhostProperties.Evs.4 || EvidenceThree = GhostProperties.Evs.4)
@@ -259,6 +274,9 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.14 := ""
 		GhostProperties.GL.15 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.3 := ""
+		GhostProperties.Ev.4 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.5 || EvidenceTwo = GhostProperties.Evs.5 || EvidenceThree = GhostProperties.Evs.5)
@@ -273,6 +291,9 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.12 := ""
 		GhostProperties.GL.15 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.6 := ""
+		GhostProperties.Ev.5 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.6 || EvidenceTwo = GhostProperties.Evs.6 || EvidenceThree = GhostProperties.Evs.6)
@@ -286,6 +307,9 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.11 := ""
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.14 := ""
+		
+		GhostProperties.Ev.5 := ""
+		GhostProperties.Ev.6 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.7 || EvidenceTwo = GhostProperties.Evs.7 || EvidenceThree = GhostProperties.Evs.7)
@@ -299,13 +323,20 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.10 := ""
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.2 := ""
+		GhostProperties.Ev.7 := ""
 	}
 	
 	global GhostElements := ""
-	global GNElements := ObjLength(GhostProperties.GL)
 	
 	Loop % GhostProperties.GL.length()
 		GhostElements := GhostElements . GhostProperties.GL[A_Index] . "`n"
 		GuiControl, Text, GhostList, %GhostElements%
-	return
+	
+	global GhostEvidence := ""
+	
+	Loop % GhostProperties.Ev.length()
+		GhostEvidence := GhostEvidence . GhostProperties.Ev[A_Index] . "`n"
+		GuiControl, Text, EvidenceList, %GhostEvidence%
 }
