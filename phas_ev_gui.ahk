@@ -20,6 +20,10 @@ global NumElements
 global GhostList
 global EvidenceList
 
+global Title
+global ChosenGhost
+global GhostInformation
+
 global GuiActive := true
 
 
@@ -44,7 +48,7 @@ Gui, Font, s10, Arial
 
 Gui, Add, Text, cYellow, A tool to help identify ghost types.
 
-Gui, Add, Tab3, w350 h280 cWhite, How To Use|Journal
+Gui, Add, Tab3, w350 h280 cWhite, How To Use|Journal|Ghost Evidence
 
 
 ; How to use
@@ -79,11 +83,26 @@ Gui, Font, s9
 Gui, Add, Text, x200 y120 w70 h500 vGhostList cAqua,
 Gui, Add, Text, x275 y120 w100 h500 vEvidenceList cRed,
 
-ReturnGhost()
-
 Gui, Show, x0 y0 w380 h370, Main Menu
 
 ; Menu, Tray, Icon, %A_ScriptDir%\Phas\phas.ico, 1, 2
+
+
+; Ghost Evidence
+
+Gui, Tab, 3
+
+Gui, Add, DropDownList, cRed Choose1 gDisplayProperties vChosenGhost, -|Spirit|Wraith|Phantom|Poltergeist|Banshee|Jinn|Mare|Revenant|Shade|Demon|Yurei|Oni|Hantu|Yokai|Goryo|Myling
+
+Gui, Font, s14
+Gui, Add, Text, w500 cWhite vTitle
+
+Gui, Font, s10
+Gui, Add, Text, w500 h500 cLime vGhostInformation,
+
+Gui, Tab, 3
+
+ReturnGhost()
 
 return
 
@@ -133,6 +152,141 @@ GhostProperties.Ev.6 := GhostPropertiesOriginal.Ev.6
 GhostProperties.Ev.7 := GhostPropertiesOriginal.Ev.7
 return
 
+
+
+DisplayProperties() {
+	Gui, Submit, NoHide
+	
+	if (ChosenGhost = GhostProperties.GL.1) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Spirit[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.2) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Wraith[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.3) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Phantom[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.4) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Poltergeist[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.5) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Banshee[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.6) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Jinn[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.7) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Mare[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.8) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Revenant[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.9) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Shade[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.10) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Demon[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.11) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Yurei[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.12) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Oni[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.13) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Hantu[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.14) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Yokai[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.15) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Goryo[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	} else if (ChosenGhost = GhostProperties.GL.16) {
+		global GhostProps := ""
+	
+		Loop % GhostProperties.Spirit.length() {
+			GhostProps := GhostProps . GhostProperties.Myling[A_Index] . "`n"
+			GuiControl, Text, Title, %ChosenGhost%
+			GuiControl, Text, GhostInformation, %GhostProps%
+		}
+	}
+} return
 
 
 ReturnGhost() { ; The main function that decides which ghost is present. Ghosts that have been excluded will return as "Disproved".
@@ -355,4 +509,4 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 	Loop % GhostProperties.Ev.length()
 		GhostEvidence := GhostEvidence . GhostProperties.Ev[A_Index] . "`n"
 		GuiControl, Text, EvidenceList, %GhostEvidence%
-}
+} return
