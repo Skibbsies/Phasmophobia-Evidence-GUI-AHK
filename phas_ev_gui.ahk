@@ -24,8 +24,8 @@ global GuiActive := true
 
 ; Global arrays, containing evidence for each ghost and a list of ghosts.
 
-global GhostProperties := {Spirit:["EMF5", "GhostWriting", "SpiritBox"], Wraith:["EMF5", "Projector", "SpiritBox"], Phantom:["SpiritBox", "Projector", "Fingerprints"], Poltergeist:["Fingerprints", "GhostWriting", "SpiritBox"], Banshee:["Fingerprints", "GhostOrbs", "Projector"], Jinn:["EMF5", "Fingerprints", "FreezingTemps"], Mare:["GhostWriting", "GhostOrbs", "SpiritBox"], Revenant:["GhostOrbs", "GhostWriting", "FreezingTemps"], Shade:["EMF5", "GhostWriting", "FreezingTemps"], Demon:["FreezingTemps", "GhostWriting", "Fingerprints"], Yurei:["FreezingTemps", "Projector", "GhostOrbs"], Oni:["EMF5", "FreezingTemps", "Projector"], Hantu:["Fingerprints", "GhostOrbs", "FreezingTemps"], Yokai:["SpiritBox", "GhostOrbs", "Projector"], Goryo:["EMF5", "Fingerprints", "Projector"], Myling:["EMF5", "Fingerprints", "GhostWriting"], Evs:["Fingerprints", "GhostWriting", "SpiritBox", "FreezingTemps", "GhostOrbs", "EMF5", "Projector"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
-global GhostPropertiesOriginal := {Spirit:["EMF5", "GhostWriting", "SpiritBox"], Wraith:["EMF5", "Projector", "SpiritBox"], Phantom:["SpiritBox", "Projector", "Fingerprints"], Poltergeist:["Fingerprints", "GhostWriting", "SpiritBox"], Banshee:["Fingerprints", "GhostOrbs", "Projector"], Jinn:["EMF5", "Fingerprints", "FreezingTemps"], Mare:["GhostWriting", "GhostOrbs", "SpiritBox"], Revenant:["GhostOrbs", "GhostWriting", "FreezingTemps"], Shade:["EMF5", "GhostWriting", "FreezingTemps"], Demon:["FreezingTemps", "GhostWriting", "Fingerprints"], Yurei:["FreezingTemps", "Projector", "GhostOrbs"], Oni:["EMF5", "FreezingTemps", "Projector"], Hantu:["Fingerprints", "GhostOrbs", "FreezingTemps"], Yokai:["SpiritBox", "GhostOrbs", "Projector"], Goryo:["EMF5", "Fingerprints", "Projector"], Myling:["EMF5", "Fingerprints", "GhostWriting"], Evs:["Fingerprints", "GhostWriting", "SpiritBox", "FreezingTemps", "GhostOrbs", "EMF5", "Projector"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
+global GhostProperties := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
+global GhostPropertiesOriginal := {Spirit:["EMF5", "Writing", "Box"], Wraith:["EMF5", "DOTS", "Box"], Phantom:["Box", "DOTS", "Prints"], Poltergeist:["Prints", "Writing", "Box"], Banshee:["Prints", "Orbs", "DOTS"], Jinn:["EMF5", "Prints", "FreezingTemps"], Mare:["Writing", "Orbs", "Box"], Revenant:["Orbs", "Writing", "FreezingTemps"], Shade:["EMF5", "Writing", "FreezingTemps"], Demon:["FreezingTemps", "Writing", "Prints"], Yurei:["FreezingTemps", "DOTS", "Orbs"], Oni:["EMF5", "FreezingTemps", "DOTS"], Hantu:["Prints", "Orbs", "FreezingTemps"], Yokai:["Box", "Orbs", "DOTS"], Goryo:["EMF5", "Prints", "DOTS"], Myling:["EMF5", "Prints", "Writing"], Evs:["Prints", "Writing", "Box", "FreezingTemps", "Orbs", "EMF5", "DOTS"], GL:["Spirit", "Wraith", "Phantom", "Poltergeist", "Banshee", "Jinn", "Mare", "Revenant", "Shade", "Demon", "Yurei", "Oni", "Hantu", "Yokai", "Goryo", "Myling"]}
 
 newGhostList := []
 newGhostList.SetCapacity(GhostProperties.GL.GetCapacity())
@@ -60,15 +60,15 @@ Gui, Tab, 2
 
 Gui, Add, Text, cWhite, Evidence Found:
 
-Gui, Add, DropDownList, vEvidenceOne gReturnGhost Choose1 cGreen, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
-Gui, Add, DropDownList, vEvidenceTwo gReturnGhost Choose1 cGreen, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
-Gui, Add, DropDownList, vEvidenceThree gReturnGhost Choose1 cGreen, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
+Gui, Add, DropDownList, vEvidenceOne gReturnGhost Choose1 cGreen Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
+Gui, Add, DropDownList, vEvidenceTwo gReturnGhost Choose1 cGreen Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
+Gui, Add, DropDownList, vEvidenceThree gReturnGhost Choose1 cGreen Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
 
 Gui, Add, Text, cWhite, Evidence Excluded:
 
-Gui, Add, DropDownList, vExcludedOne gReturnGhost Choose1 cRed, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
-Gui, Add, DropDownList, vExcludedTwo gReturnGhost Choose1 cRed, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
-Gui, Add, DropDownList, vExcludedThree gReturnGhost Choose1 cRed, None|Fingerprints|GhostWriting|SpiritBox|FreezingTemps|GhostOrbs|EMF5|Projector
+Gui, Add, DropDownList, vExcludedOne gReturnGhost Choose1 cRed Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
+Gui, Add, DropDownList, vExcludedTwo gReturnGhost Choose1 cRed Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
+Gui, Add, DropDownList, vExcludedThree gReturnGhost Choose1 cRed Sort, -|Prints|Writing|Box|FreezingTemps|Orbs|EMF5|DOTS
 
 
 Gui, Font, s10
