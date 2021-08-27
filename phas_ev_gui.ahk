@@ -150,6 +150,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.15 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.1 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.2 || ExcludedTwo = GhostProperties.Evs.2 || ExcludedThree = GhostProperties.Evs.2)
@@ -161,6 +163,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.9 := ""
 		GhostProperties.GL.10 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.2 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.3 || ExcludedTwo = GhostProperties.Evs.3 || ExcludedThree = GhostProperties.Evs.3)
@@ -171,6 +175,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.4 := ""
 		GhostProperties.GL.7 := ""
 		GhostProperties.GL.14 := ""
+		
+		GhostProperties.Ev.3 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.4 || ExcludedTwo = GhostProperties.Evs.4 || ExcludedThree = GhostProperties.Evs.4)
@@ -182,6 +188,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.11 := ""
 		GhostProperties.GL.12 := ""
 		GhostProperties.GL.13 := ""
+		
+		GhostProperties.Ev.4 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.5 || ExcludedTwo = GhostProperties.Evs.5 || ExcludedThree = GhostProperties.Evs.5)
@@ -192,6 +200,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.11 := ""
 		GhostProperties.GL.13 := ""
 		GhostProperties.GL.14 := ""
+		
+		GhostProperties.Ev.5 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.6 || ExcludedTwo = GhostProperties.Evs.6 || ExcludedThree = GhostProperties.Evs.6)
@@ -203,6 +213,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.12 := ""
 		GhostProperties.GL.15 := ""
 		GhostProperties.GL.16 := ""
+		
+		GhostProperties.Ev.6 := ""
 	}
 	
 	if (ExcludedOne = GhostProperties.Evs.7 || ExcludedTwo = GhostProperties.Evs.7 || ExcludedThree = GhostProperties.Evs.7)
@@ -214,6 +226,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.12 := ""
 		GhostProperties.GL.14 := ""
 		GhostProperties.GL.15 := ""
+		
+		GhostProperties.Ev.7 := ""
 	}
 	
 	
@@ -228,6 +242,8 @@ ReturnGhost() { ; The main function that decides which ghost is present. Ghosts 
 		GhostProperties.GL.11 := ""
 		GhostProperties.GL.12 := ""
 		GhostProperties.GL.14 := ""
+		
+		GhostProperties.Ev.1 := ""
 	}
 	
 	if (EvidenceOne = GhostProperties.Evs.2 || EvidenceTwo = GhostProperties.Evs.2 || EvidenceThree = GhostProperties.Evs.2)
