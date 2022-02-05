@@ -1,3 +1,5 @@
+# This project is no longer maintained, due to journal-related updates published to Phasmophobia.
+
 # Phasmophobia-Evidence-GUI
 A simple, open-source, independent tool to assist with ghost hunting on the game Phasmophobia.
 
