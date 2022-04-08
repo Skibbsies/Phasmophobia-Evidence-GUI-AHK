@@ -1,4 +1,5 @@
-## This project is no longer maintained, due to journal-related updates published to Phasmophobia. I also no longer develop applications in AHK, due to switching to linux - sorry!
+## This project is no longer maintained due to journal-related updates to Phasmophobia. 
+### This project was dropped at the [Exposition update](https://steamdb.info/app/739630/patchnotes/) of Phasmophobia, and will not account for any ghosts past the Goryo and Myling.
 
 # Phasmophobia-Evidence-GUI
 A tool to assist with ghost hunting on the game Phasmophobia.
