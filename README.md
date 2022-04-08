@@ -1,4 +1,4 @@
-## This project is no longer maintained, due to journal-related updates published to Phasmophobia.
+## This project is no longer maintained, due to journal-related updates published to Phasmophobia. I also no longer develop applications in AHK, due to switching to linux - sorry!
 
 # Phasmophobia-Evidence-GUI
 A tool to assist with ghost hunting on the game Phasmophobia.
